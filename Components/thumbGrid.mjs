@@ -1,12 +1,24 @@
 import Thumbnail from "./thumbnail.mjs"
 
 export default class ThumbGrid {
-  constructor() {
+  constructor(data) {
+    this.data = data;
+    this.thumbnails = [];
+  }
 
+  componentWillRender() {
+    if(this.thumbnails.length > 0) {
+      return;
+    }
+
+    this.data.array.forEach(element => {
+      t
+    });
   }
 
   render() {
-    const thumb = new Thumbnail().render();
+    this.componentWillRender();
+
     return `
     <section class="container>
       <div class="row">

@@ -3,10 +3,14 @@ export default class HandleData {
     this.data = [];
   }
 
-  async getData() {
-    const response = await fetch('../data.json');
-    this.data = response.json();
+  static async getData() {
+    try {
+      const response = await fetch('data.json');
+      const data = await response.json();
+
+      return data
+    } catch (error) {
+      console.log('Error in handleData', error);
+    }
   }
-   
-  
 }
