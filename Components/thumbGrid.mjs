@@ -1,4 +1,4 @@
-class App {
+export default class thumbGrid {
   constructor() {
 
   }
@@ -7,6 +7,3 @@ class App {
 
   }
 }
-
-const app = new App();
-app.render();
