@@ -1,5 +1,6 @@
 import createEle from './Helpers/createEle.js';
 import Title from './Components/title.mjs';
+import ThumbGrid from './Components/thumbGrid.mjs';
 
 class App {
   constructor() {
@@ -9,7 +10,11 @@ class App {
     const mainContainer = createEle("main", "main-container");
     const convertToHTML = document.createDocumentFragment();
     const title = new Title().render();
-    mainContainer.innerHTML = `${title}`;
+    const thumbnails = new ThumbGrid().render();
+    mainContainer.innerHTML = `
+      ${title}
+      ${thumbnails}
+    `;
 
     convertToHTML.appendChild(mainContainer);
     container.appendChild(convertToHTML);
