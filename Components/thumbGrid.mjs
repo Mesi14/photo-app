@@ -11,22 +11,27 @@ export default class ThumbGrid {
       return;
     }
 
-    this.data.array.forEach(element => {
-      t
+    this.data.forEach(element => {
+      this.thumbnails.push(new Thumbnail(element));
     });
+  }
+
+  get thumbnailContainer() {
+    let containerHTML = "";
+    this.thumbnails.forEach( thumbnail => (containerHTML += `<div class="col-md-4 col-xs-6 mt-5">${thumbnail.render()}</div>`));
+
+    return containerHTML;
   }
 
   render() {
     this.componentWillRender();
 
     return `
-    <section class="container>
+     <div class="container text-center mt-5">
       <div class="row">
-        <div class="col-md-4 col-xs-6">
-          ${thumb}
-        </div>
-      </div>
-    </section>
-    `
+        ${this.thumbnailContainer}
+      <div>
+    </div>
+    `;
   }
 }
