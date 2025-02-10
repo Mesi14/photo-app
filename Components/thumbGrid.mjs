@@ -6,6 +6,12 @@ export default class ThumbGrid {
     this.thumbnails = [];
   }
 
+  get thumbnailContainer() {
+    let containerHTML = "";
+    this.thumbnails.forEach( thumbnail => (containerHTML += `<div class="col-md-4 col-xs-6 mt-5">${thumbnail.render()}</div>`));
+    return containerHTML;
+  }
+
   componentWillRender() {
     if(this.thumbnails.length > 0) {
       return;
@@ -14,13 +20,6 @@ export default class ThumbGrid {
     this.data.forEach(element => {
       this.thumbnails.push(new Thumbnail(element));
     });
-  }
-
-  get thumbnailContainer() {
-    let containerHTML = "";
-    this.thumbnails.forEach( thumbnail => (containerHTML += `<div class="col-md-4 col-xs-6 mt-5">${thumbnail.render()}</div>`));
-
-    return containerHTML;
   }
 
   render() {
