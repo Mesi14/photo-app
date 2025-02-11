@@ -1,7 +1,6 @@
 export default class Photo {
   constructor(props) {
     this.props = props;
-        console.log(this.props)
   }
 
   render() {

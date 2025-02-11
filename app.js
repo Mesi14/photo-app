@@ -12,7 +12,7 @@ class App {
   }
 
   cleanApp() {
-    const app = document.querySelector(".app");
+    const app = document.querySelector(".main-container");
     if (app) {
       document.querySelector("body").removeChild(app);
     }
@@ -31,7 +31,7 @@ class App {
       const photoData = this.data.find(
         d => d.id === Number(state.link.split("=")[1])
       );
-      console.log(photoData)
+      
       if(photoData) {
         return new Photo(photoData).render();
       }
@@ -44,7 +44,7 @@ class App {
       this.data = await HandleData.instance.getData();
     }
     this.cleanApp();
-   
+
     const mainContainer = createEle("main", "main-container");
     const convertToHTML = document.createDocumentFragment();
     const title = new Title().render();
@@ -53,9 +53,10 @@ class App {
       ${this.componentToRender(state)}
     `;
     convertToHTML.appendChild(mainContainer);
-    document.querySelector("body").appendChild(convertToHTML)
+    console.log(convertToHTML.firstElementChild);
+    document.querySelector("body").appendChild(convertToHTML.firstElementChild)
   }
 }
 
 const photoApp = new App();
-photoApp.render(document.querySelector("body"));
+photoApp.render();
