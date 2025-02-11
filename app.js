@@ -53,7 +53,6 @@ class App {
       ${this.componentToRender(state)}
     `;
     convertToHTML.appendChild(mainContainer);
-    console.log(convertToHTML.firstElementChild);
     document.querySelector("body").appendChild(convertToHTML.firstElementChild)
   }
 }
