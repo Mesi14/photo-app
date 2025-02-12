@@ -7,11 +7,19 @@ export default class HandleData {
 
   retrieveFromStorage() {
     const data = window.sessionStorage.getItem("data");
-    if(data) {
-      return JSON.parse(data);
+    try {
+      if(data) {
+        return JSON.parse(data);
+      }
+    } catch (error) {
+      console.log('error retrieving from storage', error)
     }
     return null;
   }
+
+  retrieveStorageData() {
+    return this.retrieveFromStorage();
+  } 
 
   async getData() {
     try {

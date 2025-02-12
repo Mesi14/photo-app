@@ -7,9 +7,9 @@ export default class ThumbGrid {
   }
 
   get thumbnailContainer() {
-    let containerHTML = "";
-    this.thumbnails.forEach( thumbnail => (containerHTML += `<div class="col-md-4 col-xs-6 mt-5">${thumbnail.render()}</div>`));
-    return containerHTML;
+    return this.thumbnails
+      .map(thumbnail => `<div class="col-md-4 col-xs-6 mt-5">${thumbnail.render()}</div>`)
+      .join("");
   }
 
   componentWillRender() {

@@ -12,7 +12,7 @@ class App {
   }
 
   cleanApp() {
-    const app = document.querySelector(".main-container");
+    const app = document.getElementById("mainEle");
     if (app) {
       document.querySelector("body").removeChild(app);
     }
@@ -23,7 +23,7 @@ class App {
   }
 
   componentToRender(state) {
-    if(state === null || state.link === "/") {
+    if(!state || state.link === "/") {
       return new ThumbGrid(this.data).render();
     }
     
@@ -46,6 +46,7 @@ class App {
     this.cleanApp();
 
     const mainContainer = createEle("main", "main-container");
+    mainContainer.id = "mainEle";
     const convertToHTML = document.createDocumentFragment();
     const title = new Title().render();
     mainContainer.innerHTML = `

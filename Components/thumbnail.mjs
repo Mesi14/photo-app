@@ -19,7 +19,7 @@ export default class Thumbnail {
 
   render() {
     return `
-      <div class="card card-img-top" style="width: 18rem; height: 100%;">
+      <div class="card card-img-top">
         <img src='${this.props.srcThumbnail}' alt="some descript" width="100%" height="220rem">
         <div class="card-body">
           <h5 class="card-title">${this.props.title}</h5>

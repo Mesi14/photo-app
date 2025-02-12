@@ -2,10 +2,15 @@ body {
     background-color: #545504;
 }
 
+.card {
+    width: 18rem;
+    height: 100%;
+}
+
 .figure-img {
     border: 0.5rem solid #b5b5b5;
     border-radius: 1.5rem;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 0.4rem 0.8rem 0 rgba(0, 0, 0, 0.2), 0 0.6rem 2rem 0 rgba(0, 0, 0, 0.19);
 }
 
 .more-info > button {
@@ -13,5 +18,5 @@ body {
 }
 
 .description {
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
