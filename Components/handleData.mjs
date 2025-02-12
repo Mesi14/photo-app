@@ -18,15 +18,15 @@ export default class HandleData {
   }
 
   retrieveStorageData() {
-    return this.retrieveFromStorage();
+    let data = this.retrieveFromStorage();
+    if(data) {
+      return data;
+    }
   } 
 
   async getData() {
     try {
-      let data = this.retrieveFromStorage();
-      if (data) {
-        return data;
-      }
+      let data = this.retrieveStorageData();
       const response = await fetch('data.json');
       data = await response.json();
       this.storeInStorage(data);
